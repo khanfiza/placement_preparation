@@ -1,0 +1,19 @@
+class Solution {
+    public int singleNumber(int[] nums) {
+        
+        int flag=0;
+        int n=0;
+        for(int i=0;i<nums.length;i++)
+        { 
+            flag=0;
+            for(int j=0;j<nums.length;j++)
+            {
+                if(nums[i]==nums[j])
+                flag++;
+            }
+            if(flag==1)
+            n=nums[i];
+        }
+        return n;
+    }
+}
