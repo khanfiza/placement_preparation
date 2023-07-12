@@ -20,3 +20,39 @@ class Solution {
 
     }
 }
+/*Solution2 time:O(n) space:O(1)
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+     
+     ListNode slow=head;
+     ListNode fast=head;
+
+     while(fast!=null && fast.next!=null)
+     {
+         slow=slow.next;
+         fast=fast.next.next;
+     }
+     if(fast!=null)slow=slow.next;
+    fast=head;
+        ListNode next=null;
+        ListNode previous=null;
+        
+        while(slow!=null)
+        {
+          next=slow.next;
+          slow.next=previous;  
+           previous=slow;
+           slow=next;
+        }
+
+ 
+    while(fast!=null && previous!=null)
+    {
+        if(fast.val!=previous.val)
+         return false;
+         fast=fast.next;
+         previous=previous.next; 
+    }
+     return true;
+    }
+}
