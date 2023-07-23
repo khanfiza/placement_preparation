@@ -1,0 +1,29 @@
+class Solution {
+    public List<Integer> majorityElement(int[] nums) {
+
+        List<Integer> a = new ArrayList<>();
+        int c=0,n;
+        n=nums.length;
+          boolean visited[] = new boolean[n];
+           Arrays.fill(visited, false);
+      for(int i=0;i<nums.length;i++)
+      {
+          if(visited[i]==true)
+          continue;
+          c=0;
+          for(int j=0;j<nums.length;j++)
+          {
+              if(nums[i]==nums[j])
+              {
+                visited[j]=true;
+               c++;
+              }
+            
+          }
+          if(c>n/3)
+          a.add(nums[i]);
+          
+      }  
+      return a;
+    }
+}
