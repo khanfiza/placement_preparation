@@ -1,0 +1,24 @@
+class Solution {
+    public String reverseWords(String s) {
+     
+   s=s.trim();
+   String str=s+" ";
+   String str1="",wrd="";
+   for(int i=0;i<str.length();i++)
+   {
+       str1=str1+str.charAt(i);  
+       if(str.charAt(i)==' ')
+       {
+           str1=str1.replaceAll(" ","");
+           if(str.charAt(i-1)!=' ')
+           wrd=" "+str1+wrd;
+           else 
+           wrd=str1+wrd;
+           str1="";
+       }
+    
+   }
+   wrd=wrd.trim();
+   return wrd;
+    }
+}
