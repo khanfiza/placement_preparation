@@ -1,0 +1,23 @@
+lass Solution {
+    public int maxArea(int[] height) {
+     
+     int l=0;
+     int r=height.length-1;
+     int max=0;
+     int minHeight,length;
+     while(l<r)
+     {
+         int lh=height[l];
+         int rh=height[r];
+         minHeight=Math.min(lh,rh);
+         length=r-l;
+         max=Math.max(max,minHeight*length);
+         if(lh<rh)
+         l++;
+         else
+         r--;
+
+     }
+  return max;
+    }
+}
