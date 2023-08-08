@@ -1,0 +1,23 @@
+class Solution {
+    public int missingNumber(int[] nums) {
+
+   Arrays.sort(nums);
+   int k=-1,flag=0;
+   for(int i=0;i<nums.length;i++)
+   {
+     if(i==nums[i])
+     continue;
+     else
+     {
+      k=i;
+      flag=1;
+      break;
+     }
+   }
+   if(flag==0)
+   {
+     k=nums[nums.length-1]+1;
+   }
+   return k;
+    }
+}
