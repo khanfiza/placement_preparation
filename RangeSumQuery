@@ -1,0 +1,18 @@
+class NumArray {
+  private int[] sumarray;
+    public NumArray(int[] nums) {
+       this.sumarray=nums;
+    }
+    
+    public int sumRange(int left, int right) {
+        int sum=0;
+       if(left<=right)
+       {
+           for(int i=left;i<=right;i++)
+           {
+               sum=sum+sumarray[i];
+           }
+       } 
+       return sum;
+    }
+}
