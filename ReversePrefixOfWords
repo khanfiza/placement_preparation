@@ -1,0 +1,10 @@
+class Solution {
+    public String reversePrefix(String word, char ch) {
+     int index=word.indexOf(ch)+1;
+     String s=word.substring(0,index);
+     StringBuilder sb = new StringBuilder(s);
+     StringBuilder sb1 =sb.reverse();
+     String str=sb1.toString()+word.substring(index);
+     return str;
+    }
+}
